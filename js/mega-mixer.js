@@ -54,7 +54,12 @@ let Cardd = document.getElementById("card");
 
 let Bouton = document.getElementById("BoutonInitialiser");
 let Placer = document.getElementById("BoutonPlacer");
-let Nombres = document.getElementById("numberSelect");
+
+let Numselect = document.getElementById("numberSelect");
+
+
+
+
 
 
 
@@ -62,6 +67,10 @@ Bouton.addEventListener('click',() => {
 
 Bouton.disabled = true; 
 Placer.disabled = false;
+Numselect.disabled = false;
+
+
+
 
 
 
@@ -73,17 +82,77 @@ Placer.disabled = false;
 Placer.addEventListener('click',() => {
   
   Bouton.disabled = false;
-  Placer.disabled = true; 
+  Placer.disabled = true;
+  Numselect.disabled = false;
+ 
+  
 
 
 },);
 
-Nombres.addEventListener('click', () => {
+
+Numselect.addEventListener('click',() => {
+
+Bouton.disabled = false;
+Placer.disabled = false;
+Numselect.disabled = true; 
 
 
-  
-  
-  });
+
+
+
+},);
+
+
+Numselect.addEventListener('change', () => {
+
+
+if (Numselect.value == "440") {
+
+
+alert("440");
+
+
+} else if (Numselect.value == "660") {
+
+
+  alert("660");
+
+
+} else if (Numselect.value == "880") {
+
+
+  alert("880");
+
+
+} else if (Numselect.value == "1100") { 
+
+
+  alert("1100");
+
+} else if (Numselect.value == "1320") { 
+
+
+  alert("1320");
+
+} else {   };
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -125,6 +194,12 @@ ListeApprenants.forEach((cartes) => {
 
  let fInterr = document.createElement('div');
  fInterr.classList.add("interrogation");
+
+
+ 
+
+
+
 
 
 
