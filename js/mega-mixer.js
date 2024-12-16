@@ -21,10 +21,10 @@ https://lodash.com/docs/#shuffle
 
 */
 
-const ListeApprenants = ["BOUHADOUF Isaac","SEMOL Frédéric","CONRAUX Kylian",
-                        "KHELIL Yamine","LANAUD Corentin","BELABED Samir",
-                        "DE-OLIVEIRA Gabrielle", "BOUCHERBA Médy",
-                        "CHERCHARI Samy", "TURAN Theoman"];
+const ListeApprenants = ["BOUHADOUF Isaac", "SEMOL Frédéric", "CONRAUX Kylian",
+  "KHELIL Yamine", "LANAUD Corentin", "BELABED Samir",
+  "DE-OLIVEIRA Gabrielle", "BOUCHERBA Médy",
+  "CHERCHARI Samy", "TURAN Theoman"];
 
 /*
    
@@ -44,7 +44,7 @@ let smiley = document.getElementsByClassName("smiley")
 
 const Sizer = document.getElementById("sizer");
 
-let Cardd = document.getElementById("card");
+
 
 
 
@@ -63,151 +63,156 @@ let Numselect = document.getElementById("numberSelect");
 
 
 
-Bouton.addEventListener('click',() => {
-
-Bouton.disabled = true; 
-Placer.disabled = false;
-Numselect.disabled = false;
 
 
 
 
 
 
-},);
 
 
+Numselect.addEventListener('click', () => {
 
-
-Placer.addEventListener('click',() => {
-  
   Bouton.disabled = false;
-  Placer.disabled = true;
-  Numselect.disabled = false;
- 
-  
+  Placer.disabled = false;
+  Numselect.disabled = true;
 
 
 },);
 
-
-Numselect.addEventListener('click',() => {
-
-Bouton.disabled = false;
-Placer.disabled = false;
-Numselect.disabled = true; 
-
-
-
-
-
-},);
 
 
 Numselect.addEventListener('change', () => {
 
 
-if (Numselect.value == "440") {
+  if (Numselect.value == "440") {
 
 
-alert("440");
+    alert("440");
 
 
-} else if (Numselect.value == "660") {
+
+  } else if (Numselect.value == "660") {
 
 
-  alert("660");
+    alert("660");
 
 
-} else if (Numselect.value == "880") {
+
+  } else if (Numselect.value == "880") {
 
 
-  alert("880");
+    alert("880");
 
 
-} else if (Numselect.value == "1100") { 
+  } else if (Numselect.value == "1100") {
 
 
-  alert("1100");
+    alert("1100");
 
-} else if (Numselect.value == "1320") { 
+  } else if (Numselect.value == "1320") {
 
 
-  alert("1320");
+    alert("1320");
 
-} else {   };
+  } else { };
 
 
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     
 
 
 ListeApprenants.forEach((cartes) => {
 
+
+
+  let Smiley = document.createElement('div');
+  Smiley.classList.add("back", "smiley");
+  Smiley.style.backgroundImage = 'url("images/smiley/smiley-10.png")';
+  Smiley.innerText = cartes;
   
+
+
+
+
+  let fCard = document.createElement('div');
+  fCard.classList.add("flipcard", "h", "front");
+  fCard.innerHTML = `<div class="front interrogation"> ? </div>`;
+
+
+  
+
+
+
+
+
+
+
+  Placer.addEventListener('click', () => {
+
+    Bouton.disabled = false;
+    Placer.disabled = true;
+    Numselect.disabled = false;
+
+
+
+
+
+
+
+  },);
+
+
+
+
+  Bouton.addEventListener('click', () => {
+
+    Bouton.disabled = true;
+    Placer.disabled = false;
+    Numselect.disabled = false;
+
+
  
- let Smiley = document.createElement('div');
- Smiley.classList.add("smiley", "back");
- Smiley.style.backgroundImage = 'url("images/smiley/smiley-10.png")';
-
- let divNoms = document.createElement('div');
- divNoms.classList.add("prenom");
- divNoms.innerText =  cartes;
 
 
 
- let fCard = document.createElement('div');
- fCard.classList.add("flipcard", "h");
-
- let fInterr = document.createElement('div');
- fInterr.classList.add("interrogation");
-
-
- 
 
 
 
+
+
+
+  },);
 
 
 
 
 
  
-Sizer.appendChild(Smiley);
-Smiley.appendChild(divNoms);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+  Sizer.appendChild(Smiley);
+
+*/
+
+  Sizer.appendChild(fCard);
 
 
 });
@@ -224,7 +229,7 @@ Smiley.appendChild(divNoms);
 
 
 
-        
+
 console.log(ListeApprenants);
 
 
